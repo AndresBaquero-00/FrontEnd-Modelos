@@ -1,0 +1,70 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h5 class="modal-title" id="modal-title">{{ serie.nombre }}</h5>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-8">
+                <h6>Descripción:</h6>
+                <p>{{ serie.descripcion }}</p>
+
+                <h6>Año de Lanzamiento:</h6>
+                <p>{{ serie.anio }}</p>
+
+                <h6>Numero de Temporadas:</h6>
+                <p>{{ serie.num_temp }}</p>
+            </div>
+            <div class="col-md-4 imagen">
+                <img src="assets/images/{{ serie.nombre }}.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <!--<div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Cerrar</button>
+    </div>-->
+</ng-template>
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">SERIES EN CARTELERA</h4>
+                        <p class="card-category">Lista de series</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th *ngFor="let enc of encabezado">
+                                        {{ enc }}
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let serie of series" (click)="mostrarSerie( content, serie )" style="cursor: pointer">
+                                        <td>
+                                            {{ serie.id }}
+                                        </td>
+                                        <td>
+                                            {{ serie.nombre }}
+                                        </td>
+                                        <td>
+                                            {{ serie.anio }}
+                                        </td>
+                                        <td>
+                                            {{ serie.num_temp }}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

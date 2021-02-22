@@ -1,0 +1,88 @@
+<div class="content">
+    <div class="container-fluid">
+        <div class="row" *ngIf="!existe">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">Actualizar</h4>
+                        <p class="card-category">Complete los siguientes campos.</p>
+                    </div>
+                    <div class="card-body">
+                        <form #eliminar="ngForm" (ngSubmit)="consultar()">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">ID</label>
+                                        <input type="number" [ngModelOptions]="{ standalone: true }" 
+                                                           [(ngModel)]="id"
+                                                           class="form-control"
+                                                           required>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary pull-right" type="submit">Consultar</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12" *ngIf="existe">
+            <div class="card">
+                <div class="card-header card-header-primary">
+                    <h4 class="card-title">Actualizar</h4>
+                    <p class="card-category">Complete los siguientes campos.</p>
+                </div>
+                <div class="card-body">
+                    <form #registro="ngForm" (ngSubmit)="actualizar()">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Nombre</label>
+                                    <input type="text" [ngModelOptions]="{ standalone: true }" 
+                                                       [(ngModel)]="serie.nombre" 
+                                                       class="form-control"
+                                                       required>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Año</label>
+                                    <input type="text"  [ngModelOptions]="{ standalone: true }" 
+                                                        [(ngModel)]="serie.anio" 
+                                                        class="form-control"
+                                                        required>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Número de Temporadas</label>
+                                    <input type="number"  [ngModelOptions]="{ standalone: true }" 
+                                                        [(ngModel)]="serie.num_temp" 
+                                                        class="form-control"
+                                                        required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Descripción</label>
+                                    <textarea type="text"  [ngModelOptions]="{ standalone: true }" 
+                                                        [(ngModel)]="serie.descripcion" 
+                                                        class="form-control"
+                                                        rows="5"
+                                                        required>
+                                    </textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary pull-right" type="submit">Actualizar</button>
+                        <div class="clearfix"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

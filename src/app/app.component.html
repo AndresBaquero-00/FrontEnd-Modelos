@@ -1,0 +1,38 @@
+<div class="wrapper">
+    <div class="sidebar" data-color="azure" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
+        <div class="logo"><a href="http://www.creative-tim.com" class="simple-text logo-normal">
+                NETFLIX
+            </a></div>
+        <div class="sidebar-wrapper">
+            <ul class="nav">
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="/home">
+                        <i class="material-icons">home</i> <!-- home -->
+                        <p>Inicio</p>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link add" routerLink="/registro">
+                        <i class="material-icons">add</i> <!-- add -->
+                        <p>Agregar</p>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link update" routerLink="/update">
+                        <i class="material-icons">update</i> <!-- add -->
+                        <p>Actualizar</p>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link borrar" routerLink="/borrar">
+                        <i class="material-icons">delete</i> <!-- add -->
+                        <p>Borrar</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-panel">
+        <router-outlet></router-outlet>
+    </div>
+</div>
